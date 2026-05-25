@@ -235,23 +235,23 @@ h2,
 h3 {
   margin-top: 0;
   letter-spacing: -0.03em;
-  text-wrap: balance;
+  text-wrap: wrap;
 }
 
 h1 {
   font-size: clamp(2.5rem, 4.8vw, 4.2rem);
   line-height: 1.12;
   margin-bottom: 20px;
-  max-width: 11ch;
-  word-break: keep-all;
+  max-width: none;
+  word-break: normal;
 }
 
 h2 {
   font-size: clamp(1.9rem, 3vw, 2.6rem);
   line-height: 1.18;
   margin-bottom: 18px;
-  max-width: 16ch;
-  word-break: keep-all;
+  max-width: none;
+  word-break: normal;
 }
 
 h3 {
@@ -263,18 +263,24 @@ p,
 li {
   color: var(--muted);
   line-height: 1.75;
-  word-break: keep-all;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 .lead {
   font-size: clamp(1rem, 1vw + 0.9rem, 1.12rem);
   max-width: 60ch;
-  text-wrap: pretty;
-  word-break: keep-all;
+  text-wrap: wrap;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 .lead.compact {
   max-width: 680px;
+}
+
+.range-break-title > span {
+  display: inline;
 }
 
 .hero-lead {
@@ -778,12 +784,12 @@ li {
   }
 
   h1 {
-    max-width: 12ch;
+    max-width: none;
     font-size: 2.35rem;
   }
 
   h2 {
-    max-width: 14ch;
+    max-width: none;
     font-size: 1.9rem;
   }
 
@@ -889,15 +895,15 @@ li {
   h1 {
     font-size: 2rem;
     line-height: 1.18;
-    max-width: 8.5ch;
-    text-wrap: pretty;
+    max-width: none;
+    text-wrap: wrap;
   }
 
   h2 {
     font-size: 1.55rem;
     line-height: 1.24;
-    max-width: 12ch;
-    text-wrap: pretty;
+    max-width: none;
+    text-wrap: wrap;
   }
 
   h3 {
@@ -942,5 +948,11 @@ li {
 
   .icon-badge iconify-icon {
     font-size: 1.35rem;
+  }
+}
+
+@media (min-width: 360px) and (max-width: 430px) {
+  .range-break-title > span {
+    display: block;
   }
 }
